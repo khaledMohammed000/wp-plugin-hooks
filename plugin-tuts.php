@@ -2,10 +2,17 @@
 
 /*
 Plugin Name: Hooks
-Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
-Description: A brief description of the Plugin.
+Plugin URI: https://github.com/khaledMohammed000/wp-plugin-hooks
+Description: it does a lot
 Version: 1.0
-Author: user-1
-Author URI: http://URI_Of_The_Plugin_Author
-License: A "Slug" license name e.g. GPL2
+Author: Khaled
+Author URI: http://mohammedkhaled.me
+License: GPL2
 */
+//ptfwp_ -> plugin tuts for wp
+//removing wp-news and wp-activity
+function ptfwp_remove_cluttering_from_dashboard(){
+remove_meta_box('dashboard_primary','dashboard','postbox-container-2');
+remove_meta_box('dashboard_activity','dashboard','postbox-container-1');
+}
+add_action('wp_dashboard_setup','ptfwp_remove_cluttering_from_dashboard');
